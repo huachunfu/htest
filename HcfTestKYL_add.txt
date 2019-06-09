@@ -1,0 +1,26 @@
+把本地代码上传：
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin http://gitlab.meijilive.com/test/testdocument.git
+git push -u origin master
+
+2.在上面创建的 github 文件目录放需要上传的代码，然后安装上面的步骤开始操作
+第一步：git init --建仓
+第二步：git add * --添加代码到本地仓库（*是代码添加全部更新的）
+第三步：git commit -m "first commit" --提交到本地缓存（“引号里面是说明提交了什么东西”）
+
+第四步：git remote add origin http://gitlab.meijilive.com/test/testdocument.git --提交到远程
+github 上（后面的地址，就是之前配置的 repository 地址）
+第五步：git push -u origin master --push 到 master 分支
+
+注意：初次使用的话，在输入上面指令过程中会遇到以下几个问题：
+1.要是 cmd 窗口看到提示以下这两个信息
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com解决办法：按上面的提升，cmd 窗口接着输入>git config --global user.name "这里是你的 github 用户名" 
+>git config --global user.email xxx@xxx.com(你的邮箱)2.提交到远程时候，提示：fatal: remote origin already exists.解决办法：删除远程 git 仓库>git remote rm origin3.首次操作过程中需要登录就按提示输入账号名和密码
+
+如果在使用Git对源代码进行push（上传推送）时候，会出现error：failed to push some refs to ...错误
+通过以下命令进行代码合并
+git pull --rebase origin master 这时候就可以在本地文件内看到README.md文件 之后再运行git push origin master 进行推送
+   chunfu a*i
